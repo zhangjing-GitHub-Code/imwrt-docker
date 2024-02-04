@@ -69,8 +69,8 @@ jobs:
       - name: Push extra tags for snapshot
         if: ${{ github.event.inputs.version == 'snapshot' }}
         run: |
-          docker tag jing2hang1105/imw-rootfs:${{ matrix.target }}-${{ github.event.inputs.version }} immortalwrt/rootfs:${{ matrix.arch }}
-          docker tag jing2hang1105/imw-rootfs:${{ matrix.target }}-${{ github.event.inputs.version }} immortalwrt/rootfs:${{ matrix.target }}
+          docker tag jing2hang1105/imw-rootfs:${{ matrix.target }}-${{ github.event.inputs.version }} jing2hang1105/imw-rootfs:${{ matrix.arch }}
+          docker tag jing2hang1105/imw-rootfs:${{ matrix.target }}-${{ github.event.inputs.version }} jing2hang1105/imw-rootfs:${{ matrix.target }}
           docker push jing2hang1105/imw-rootfs:${{ matrix.arch }}
           docker push jing2hang1105/imw-rootfs:${{ matrix.target }}
 
