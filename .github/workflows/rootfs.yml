@@ -28,14 +28,6 @@ jobs:
             arch: arm_cortex-a15_neon-vfpv4
           - target: armsr-armv8
             arch: aarch64_generic
-          - target: malta-be
-            arch: mips_24kc
-          - target: x86-generic
-            arch: i386_pentium4
-          - target: x86-geode
-            arch: i386_pentium-mmx
-          - target: x86-64
-            arch: x86_64
 
     steps:
       - name: Checkout docker repo
