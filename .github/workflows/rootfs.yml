@@ -61,18 +61,18 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            immortalwrt/rootfs:${{ matrix.arch }}-${{ github.event.inputs.branch }}
-            immortalwrt/rootfs:${{ matrix.arch }}-${{ github.event.inputs.version }}
-            immortalwrt/rootfs:${{ matrix.target }}-${{ github.event.inputs.branch }}
-            immortalwrt/rootfs:${{ matrix.target }}-${{ github.event.inputs.version }}
+            jing2hang1105/imw-rootfs:${{ matrix.arch }}-${{ github.event.inputs.branch }}
+            jing2hang1105/imw-rootfs:${{ matrix.arch }}-${{ github.event.inputs.version }}
+            jing2hang1105/imw-rootfs:${{ matrix.target }}-${{ github.event.inputs.branch }}
+            jing2hang1105/imw-rootfs:${{ matrix.target }}-${{ github.event.inputs.version }}
 
       - name: Push extra tags for snapshot
         if: ${{ github.event.inputs.version == 'snapshot' }}
         run: |
-          docker tag immortalwrt/rootfs:${{ matrix.target }}-${{ github.event.inputs.version }} immortalwrt/rootfs:${{ matrix.arch }}
-          docker tag immortalwrt/rootfs:${{ matrix.target }}-${{ github.event.inputs.version }} immortalwrt/rootfs:${{ matrix.target }}
-          docker push immortalwrt/rootfs:${{ matrix.arch }}
-          docker push immortalwrt/rootfs:${{ matrix.target }}
+          docker tag jing2hang1105/imw-rootfs:${{ matrix.target }}-${{ github.event.inputs.version }} immortalwrt/rootfs:${{ matrix.arch }}
+          docker tag jing2hang1105/imw-rootfs:${{ matrix.target }}-${{ github.event.inputs.version }} immortalwrt/rootfs:${{ matrix.target }}
+          docker push jing2hang1105/imw-rootfs:${{ matrix.arch }}
+          docker push jing2hang1105/imw-rootfs:${{ matrix.target }}
 
       - name: Push extra tags for x86-64
         if: ${{ matrix.target == 'x86-64' }}
